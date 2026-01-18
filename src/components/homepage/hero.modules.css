@@ -1,0 +1,99 @@
+#heroSection {
+
+display: flex;
+flex-direction: column;
+align-items: center;
+
+
+
+
+}
+
+.triangle-left {
+  width: 0; 
+  height: 0; 
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent; 
+  
+  border-right:12px solid #00d9ff; 
+  display: block;
+  
+}
+
+.triangle-right {
+ width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #00d9ff;
+  display: block;
+}
+
+.imgs {
+  
+  z-index: 2;
+  border-width: 10px;
+  border-color: #ff00dd;
+  border-style: solid;
+  border-radius: 8px;
+  overflow: hidden; /* clip shadow outside */
+  
+
+}
+
+#imgBg {
+  
+  width: 600px;
+  height: 360px;
+  background-color: rgba(102, 100, 100, 0.644);
+  border-radius: 8px;
+  z-index: -1;
+  margin-top: -360px;
+   /* Soft right + bottom shadow */
+  box-shadow: 10px 10px 8px rgba(0,0,0,0.5);
+  
+}
+
+
+#nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+    width: 600px;
+    padding-top: 5px;
+    background-color: #ff00dd;
+    border-radius: 8px;
+    margin-top: -10px;
+    z-index: 1;
+    
+    
+}
+
+.left-btn, .right-btn {
+  background-color: transparent;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible; /* IMPORTANT */
+}
+
+
+/* Hover colors */
+.left-btn:hover .triangle-left {
+  border-right-color: #eeff00;
+}
+
+.right-btn:hover .triangle-right {
+  border-left-color: #eeff00;
+}
+
+.triangle-left,
+.triangle-right {
+  transition: border-color 0.2s ease;
+}
