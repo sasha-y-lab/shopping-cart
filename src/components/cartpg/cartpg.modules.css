@@ -1,0 +1,14 @@
+#cartmainContainer {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    width: 900px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    height: 500px;
+     background: red;
+  min-height: 100vh;
+
+}
