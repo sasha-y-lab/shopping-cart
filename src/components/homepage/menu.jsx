@@ -1,10 +1,17 @@
 import { useState } from 'react'
-
+import '../homepage/homepg.modules.css'
 
 function Menu({ setCurrentPage }) {
-  return (
+  
+  
+  
+
+    return (
 
     <>
+
+
+
 
     <div className="cart">
 
@@ -26,13 +33,23 @@ My Cart <svg className="cartIcon" xmlns="http://www.w3.org/2000/svg" height="24p
         <span>Home</span>
       </div>
 
-      <div className="shop">
+      <div
+        className="shop"
+        onClick={() => setCurrentPage("shop")}
+        style={{ cursor: "pointer" }}
+      >
         <span>Shop</span>
       </div>
+    
+         
+      
 
       
     </div>
 
+ <div id="subheading">
+    <h4>MAKEUP BY HEXCODE</h4>
+</div>
     
 
     </>

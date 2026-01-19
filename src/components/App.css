@@ -5,3 +5,8 @@
   text-align: center;
 }
 
+
+.page-content {
+  padding-top: 100px; /* height of header/menu */
+  min-height: calc(100vh - 100px);
+}

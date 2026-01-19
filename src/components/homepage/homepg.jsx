@@ -1,47 +1,32 @@
 import { useState } from 'react'
-import Hero from './hero'
 import '../homepage/homepg.modules.css'
-import Menu from './menu'
-import Buttons from '../buttons/buttons'
+import ShopNowButton from '../buttons/buttons'
+import Hero from './hero'
 
 
 
 
 
-function Homepage() {
+function Homepage({setCurrentPage}) {
 
 
-const [currentPage, setCurrentPage] = useState("home");
-
-    return (
 
 
-        <>
+    
 
-<header>
+return (
+       <>
 
-<div id="titleMain">
 
-        <span className="titleHome">INAYGIA</span>
-        <span className="titleHome2">INAYGIA</span>
-        <span className="titleHome3">INAYGIA</span>
-        
+
+<div id='heroHead'>
+
+<Hero />
+
 </div>
 
 
-
-<Menu setCurrentPage={setCurrentPage} />
-
-
-        <h4>MAKEUP BY HEXCODE</h4>
-
-
-</header>
-
-{currentPage === "home" && (
-       <>
-
-        <Hero />
+       
 
 <div id="mainHome">
 
@@ -67,20 +52,20 @@ Inaygia is a beauty company. Lorem ipsum dolor sit amet, consectetur adipiscing 
 
 <div id="buyBtn">
 
-<Buttons />
+<ShopNowButton setCurrentPage={setCurrentPage} />
 
 </div>
 
 </div>
 
 </>
-      )}
+     
         
-        </>
 
 
 
-    );
+
+    )
 
 
 };
