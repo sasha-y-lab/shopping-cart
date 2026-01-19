@@ -8,6 +8,7 @@ import MyCart from './cartpg/cartpg.jsx'
 
 
 
+
 function App() {
 
   const [cart, setCart] = useState([]);
@@ -15,6 +16,23 @@ function App() {
   const [currentPage, setCurrentPage] = useState("home");
 
    const [scrolled, setScrolled] = useState(false);
+
+
+   const updateQuantity = (id, qty) => {
+  setCart(prev =>
+    prev.map(item =>
+      item.id === id
+        ? { ...item, quantity: Math.max(1, qty) }
+        : item
+    )
+  );
+};
+
+const removeItem = (id) => {
+  setCart(prev => prev.filter(item => item.id !== id));
+};
+
+
 
    useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +49,9 @@ function App() {
   }, []);
 
 
+
+  
+
   return (
     <>
 
@@ -38,7 +59,7 @@ function App() {
       <Header className={`titleHome ${scrolled ? 'scrolled' : ''}`} />
 
 
-      <Menu setCurrentPage={setCurrentPage} />
+      <Menu cart={cart} setCurrentPage={setCurrentPage} />
 
       
 
@@ -51,7 +72,9 @@ function App() {
             setCurrentPage={setCurrentPage}
           />
         )}
-        {currentPage === "cart" && <MyCart cart={cart} />}
+        {currentPage === "cart" && <MyCart cart={cart}
+  updateQuantity={updateQuantity}
+  removeItem={removeItem} />}
       </div>
 
 

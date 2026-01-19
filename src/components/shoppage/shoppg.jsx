@@ -53,7 +53,10 @@ function ShopPage({ cart, setCart, setCurrentPage }) {
     <div id="shopmainContainter">
       <h2>Shop Page</h2>
       <button onClick={() => setCurrentPage("cart")}>
-        Go to Cart ({cart.length})
+        Go to Cart (
+  {cart.reduce((sum, item) => sum + item.quantity, 0)}
+)
+
       </button>
 
       <div id="grid">
